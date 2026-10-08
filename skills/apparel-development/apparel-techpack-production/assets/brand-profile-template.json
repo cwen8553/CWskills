@@ -1,0 +1,32 @@
+{
+  "profileVersion": "1.0",
+  "profileName": "",
+  "producerBrand": "",
+  "customerBrand": "",
+  "documentTitle": "服装工艺单",
+  "fileBrand": "",
+  "styleNumbering": {
+    "prefix": "",
+    "digits": 3,
+    "topSuffix": "-T",
+    "bottomSuffix": "-B",
+    "standaloneHasSuffix": false
+  },
+  "branding": {
+    "producerLogoPath": "",
+    "customerLogoPath": "",
+    "garmentMainLabelBrand": "",
+    "garmentLogoBrand": "",
+    "hangtagBrand": "",
+    "careLabelBrand": ""
+  },
+  "placementRules": [],
+  "labelRules": [],
+  "defaultMarket": "",
+  "defaultSalesPlatform": "",
+  "defaultSizes": [],
+  "presentation": {
+    "palette": "black-white-gray",
+    "language": "zh-CN"
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "服装工艺单与测品备货"
+  short_description: "从款式与面料资料生成可审计的工艺单、配码建议和批量管理表"
+  default_prompt: "使用 $apparel-techpack-production 读取款式、面料和品牌规则，生成正式中文工艺单；所有缺失与冲突信息标记待确认。"

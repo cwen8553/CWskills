@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "2.0",
+  "deliverables": {
+    "includeMarketPage": true,
+    "includeCopywritingPage": true,
+    "createBatchIndex": false,
+    "createCostInputTemplate": false
+  },
+  "order": {
+    "orderId": "",
+    "styleNo": "",
+    "productName": "",
+    "productComposition": "",
+    "stylePositioning": "",
+    "customer": "",
+    "brand": "",
+    "producerBrand": "",
+    "documentTitle": "服装工艺单",
+    "fileBrand": "",
+    "producerLogoPath": "",
+    "brandLogoPath": "",
+    "season": "",
+    "market": "美国",
+    "salesPlatform": "Amazon.com 美国站",
+    "owner": "",
+    "status": "草稿",
+    "version": "0.1",
+    "baseSize": "M",
+    "sizeRange": "M-L-XL",
+    "sizes": ["M", "L", "XL"],
+    "colorPolicy": "fixed-original",
+    "notes": "",
+    "fabricDisplay": ""
+  },
+  "sources": [],
+  "requirements": [],
+  "visuals": {
+    "designRenders": [],
+    "technicalViews": []
+  },
+  "technicalReview": {
+    "sideViewRequired": true,
+    "designCore": "",
+    "quickEdits": [
+      {"id": "R1", "area": "领口/开口", "currentRequirement": "", "suggestedChange": ""},
+      {"id": "R2", "area": "袖口/下摆", "currentRequirement": "", "suggestedChange": ""},
+      {"id": "R3", "area": "口袋/腰头/闭合", "currentRequirement": "", "suggestedChange": ""},
+      {"id": "R4", "area": "标签/标识位置", "currentRequirement": "", "suggestedChange": ""}
+    ]
+  },
+  "fabricDetail": {
+    "code": "",
+    "series": "",
+    "name": "",
+    "composition": "",
+    "gsm": null,
+    "usableWidth": null,
+    "structure": "",
+    "handFeel": "",
+    "stretch": "",
+    "recovery": "",
+    "opacity": "",
+    "season": "",
+    "care": "",
+    "stockColors": [],
+    "status": "pending",
+    "sourceId": ""
+  },
+  "colorways": [],
+  "bom": [],
+  "pom": [],
+  "construction": [],
+  "artwork": [],
+  "labelsPackaging": [],
+  "testing": [],
+  "copywriting": {
+    "sellingPoints": [],
+    "shortCopy": "",
+    "longCopy": "",
+    "keywords": [],
+    "copyBasis": "",
+    "status": "pending"
+  },
+  "sizeBasis": {
+    "primarySourceId": "",
+    "crossCheckSourceId": "",
+    "bodyRows": [],
+    "status": "pending"
+  },
+  "marketBenchmark": {
+    "primaryPlatform": "Amazon.com 美国站",
+    "capturedAt": "",
+    "comparables": [],
+    "sizeBodyReference": [],
+    "testAllocationByColor": [],
+    "methodNote": "",
+    "salesConclusion": ""
+  },
+  "sampleProduction": {
+    "patternRoom": "",
+    "sampleMaker": "",
+    "bulkProducer": "",
+    "sampleStatus": "",
+    "bulkStatus": ""
+  },
+  "revisions": []
+}

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "2.0",
+  "deliverables": {"includeMarketPage": true, "includeCopywritingPage": true},
+  "order": {
+    "orderId": "DEMO-001",
+    "styleNo": "DEMO-001-T",
+    "productName": "女式长袖家居上衣",
+    "productComposition": "长袖上衣（单件）",
+    "stylePositioning": "柔软、宽松、日常家居",
+    "customer": "示例客户",
+    "brand": "DEMO BRAND",
+    "producerBrand": "TECH STUDIO",
+    "documentTitle": "服装工艺单",
+    "fileBrand": "DEMO",
+    "season": "全年",
+    "market": "美国",
+    "salesPlatform": "Amazon.com 美国站",
+    "owner": "产品负责人",
+    "status": "草稿",
+    "version": "0.1",
+    "baseSize": "M",
+    "sizeRange": "M-L-XL",
+    "sizes": ["M", "L", "XL"],
+    "colorPolicy": "fixed-original",
+    "notes": "草稿示例；未确认字段保持待确认。"
+  },
+  "sources": [{"id": "SRC-001", "type": "brief", "path": "source/style-brief.pdf", "locator": "page 1", "status": "confirmed"}],
+  "requirements": [
+    {"id": "REQ-005", "value": "95%莫代尔 / 5%氨纶", "status": "confirmed", "sourceId": "SRC-001"},
+    {"id": "REQ-006", "value": 180, "status": "confirmed", "sourceId": "SRC-001"},
+    {"id": "REQ-007", "value": 165, "status": "confirmed", "sourceId": "SRC-001"}
+  ],
+  "visuals": {
+    "designRenders": [{"id": "VIS-D-001", "type": "design-render", "view": "front", "path": "images/effect.png", "status": "draft", "sourceId": "SRC-001"}],
+    "technicalViews": [
+      {"id": "VIS-T-001", "type": "technical-flat", "view": "front", "path": "images/front.png", "status": "draft", "sourceId": "SRC-001"},
+      {"id": "VIS-T-002", "type": "technical-flat", "view": "side", "path": "images/side.png", "status": "draft", "sourceId": "SRC-001"},
+      {"id": "VIS-T-003", "type": "technical-flat", "view": "back", "path": "images/back.png", "status": "draft", "sourceId": "SRC-001"}
+    ]
+  },
+  "technicalReview": {
+    "sideViewRequired": true,
+    "designCore": "宽松直身版型，肩线与袖窿须保持自然垂落，面料回复性需支持领口和袖口洗后稳定。",
+    "quickEdits": [
+      {"id": "R1", "area": "领口", "currentRequirement": "圆领包边", "suggestedChange": "确认领宽、前领深及包边成品宽"},
+      {"id": "R2", "area": "袖口", "currentRequirement": "直袖口", "suggestedChange": "确认袖口围与折边宽"},
+      {"id": "R3", "area": "下摆", "currentRequirement": "平下摆", "suggestedChange": "确认前后衣长是否同长"},
+      {"id": "R4", "area": "标签", "currentRequirement": "后领主标、左侧缝水洗标", "suggestedChange": "确认距后领/下摆基准尺寸"}
+    ]
+  },
+  "fabricDetail": {
+    "code": "FAB-001", "series": "Soft Jersey", "name": "莫代尔弹力针织布", "composition": "95%莫代尔 / 5%氨纶", "gsm": 180, "usableWidth": 165,
+    "structure": "单面针织", "handFeel": "柔软顺滑", "stretch": "横向弹力", "recovery": "待测试", "opacity": "待测试", "season": "全年", "care": "待洗标确认", "stockColors": ["黑色", "粉色"], "status": "pending", "sourceId": "SRC-001"
+  },
+  "colorways": [
+    {"colorwayId": "CW-01", "name": "黑色", "component": "主身", "material": "FAB-001", "pantoneCode": "", "system": "FHI TCX", "physicalStandard": "供应商黑色实物色卡", "labDipStatus": "不适用", "status": "pending", "sourceId": "SRC-001"},
+    {"colorwayId": "CW-02", "name": "粉色", "component": "主身", "material": "FAB-001", "pantoneCode": "", "system": "FHI TCX", "physicalStandard": "供应商粉色实物色卡", "labDipStatus": "不适用", "status": "pending", "sourceId": "SRC-001"}
+  ],
+  "bom": [
+    {"lineId": "BOM-01", "category": "主面料", "component": "大身/袖", "placement": "整件", "spec": "95%莫代尔/5%氨纶，180 GSM，可用幅宽165 cm", "materialCode": "FAB-001", "colorRef": "CW-01/CW-02", "unit": "m", "consumption": null, "status": "pending", "sourceId": "SRC-001"}
+  ],
+  "pom": [
+    {"pomId": "P01", "nameCn": "衣长", "nameEn": "Body length", "measurementMethod": "肩颈点直量至下摆", "unit": "cm", "tolerancePlus": 1.0, "toleranceMinus": 1.0, "values": {"M": 68, "L": 69.5, "XL": 71}, "status": "pending", "sourceId": "SRC-001"},
+    {"pomId": "P02", "nameCn": "胸围", "nameEn": "Chest circumference", "measurementMethod": "腋下2.5cm平量胸宽×2", "unit": "cm", "tolerancePlus": 2.0, "toleranceMinus": 2.0, "values": {"M": 108, "L": 114, "XL": 120}, "status": "pending", "sourceId": "SRC-001"}
+  ],
+  "construction": [
+    {"operationId": "OP-01", "area": "肩缝/侧缝", "operation": "四线包缝", "seamType": "待车样确认", "stitchType": "待车样确认", "spi": null, "seamAllowance": "10 mm", "thread": "同色涤纶线", "machine": "包缝机", "qualityNote": "缝线平整，不得拉伸起浪", "status": "pending", "sourceId": "SRC-001"}
+  ],
+  "artwork": [],
+  "labelsPackaging": [
+    {"itemId": "LBL-01", "category": "主标", "item": "主标", "spec": "可编辑文字稿，尺寸待确认", "placement": "后领内侧居中", "placementImage": "images/label-main.png", "unit": "pcs", "quantityPerPiece": 1, "status": "pending", "sourceId": "SRC-001"},
+    {"itemId": "LBL-02", "category": "水洗标", "item": "水洗标", "spec": "可编辑文字稿，法定信息待审核", "placement": "左侧内缝，距下摆尺寸待确认", "unit": "pcs", "quantityPerPiece": 1, "status": "pending", "sourceId": "SRC-001"}
+  ],
+  "testing": [],
+  "copywriting": {
+    "sellingPoints": [
+      {"text": "柔软顺滑的贴身触感", "evidence": "面料手感记录", "channel": "商品页", "status": "pending"},
+      {"text": "宽松直身版型，适合居家与轻松叠穿", "evidence": "批准版型后确认", "channel": "商品页", "status": "pending"}
+    ],
+    "shortCopy": "柔软垂坠的长袖家居上衣，以宽松直身轮廓兼顾日常舒适与轻松叠穿。",
+    "longCopy": "采用柔软的莫代尔弹力针织面料，结合宽松直身廓形与简洁圆领设计，满足居家、睡前和日常休闲等多场景穿着。袖口与下摆保持利落线条，细节以样衣与洗后测试结果为准。",
+    "keywords": ["女式家居上衣", "莫代尔长袖", "宽松睡衣", "柔软针织"],
+    "copyBasis": "款式结构、面料规格与目标场景",
+    "status": "pending"
+  },
+  "sizeBasis": {"bodyRows": [], "status": "pending"},
+  "marketBenchmark": {
+    "primaryPlatform": "Amazon.com 美国站",
+    "capturedAt": "2026-10-09",
+    "comparables": [{"platform": "Amazon.com", "brand": "示例品牌", "product": "同类女式长袖家居上衣", "asin": "DEMOASIN", "priceDisplay": "USD 39.99", "rating": 4.3, "reviewCount": 120, "salesSignal": "示例公开信号，非实际销量", "sizeRange": "S-XL", "material": "Modal blend", "fitInsight": "宽松版型", "sourceLabel": "示例记录"}],
+    "sizeBodyReference": [],
+    "testAllocationByColor": [
+      {"color": "黑色", "classification": "core", "unitsPerColor": 20, "unitsBySize": {"M": 7, "L": 8, "XL": 5}, "rationale": "核心色首测，L略高"},
+      {"color": "粉色", "classification": "test", "unitsPerColor": 20, "unitsBySize": {"M": 8, "L": 8, "XL": 4}, "rationale": "季节测试色，控制XL深度"}
+    ],
+    "methodNote": "示例配码仅用于验证模板，实际项目须使用当前公开数据或官方子SKU销售报告。",
+    "salesConclusion": "每色20件，黑色和粉色分别按M/L/XL分配。"
+  },
+  "revisions": [{"version": "0.1", "date": "2026-10-09", "type": "初稿", "section": "全部", "description": "模板回归测试", "author": "示例", "approver": "", "note": "草稿"}]
+}

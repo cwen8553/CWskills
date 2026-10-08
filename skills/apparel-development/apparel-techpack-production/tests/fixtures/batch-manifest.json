@@ -1,0 +1,23 @@
+{
+  "title": "工艺单管理总表",
+  "items": [
+    {
+      "status": "待确认",
+      "styleNo": "DEMO-001-T",
+      "productName": "女式长袖家居上衣",
+      "category": "上衣",
+      "excelPath": "excel/DEMO-001-T_DEMO工艺单.xlsx",
+      "pdfPath": "pdf/DEMO-001-T_DEMO工艺单.pdf",
+      "sampleMode": "板房做样",
+      "sampleOwner": "待填写",
+      "sampleStatus": "待排期",
+      "bulkProducer": "待填写",
+      "bulkStatus": "待确认",
+      "version": "0.1",
+      "fabricCode": "FAB-001",
+      "fabricName": "莫代尔弹力针织布",
+      "fabricWidth": 165,
+      "note": "测试行"
+    }
+  ]
+}

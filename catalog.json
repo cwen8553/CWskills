@@ -1,0 +1,71 @@
+{
+  "name": "CWskills",
+  "description": "Open-source e-commerce Agent Skills organized by business use case.",
+  "version": "0.1.0",
+  "categories": [
+    {
+      "id": "apparel-development",
+      "name_zh": "服装开发",
+      "skills": [
+        {
+          "name": "apparel-techpack-production",
+          "path": "skills/apparel-development/apparel-techpack-production",
+          "summary_zh": "服装工艺单、市场对标、测品备货和成本输入模板。"
+        }
+      ]
+    },
+    {
+      "id": "ecommerce-content",
+      "name_zh": "电商文案",
+      "skills": [
+        {
+          "name": "ecommerce-visual-copywriting",
+          "path": "skills/ecommerce-content/ecommerce-visual-copywriting",
+          "summary_zh": "电商视觉策略、Storyboard、图内文案、Prompt 与合规证据检查。"
+        }
+      ]
+    },
+    {
+      "id": "product-visuals",
+      "name_zh": "商品视觉",
+      "install_together": true,
+      "skills": [
+        {
+          "name": "product-shots",
+          "path": "skills/product-visuals/product-shots",
+          "summary_zh": "商品图任务路由入口。"
+        },
+        {
+          "name": "product-shots-main-image",
+          "path": "skills/product-visuals/product-shots-main-image",
+          "summary_zh": "Amazon US 主图与副图。"
+        },
+        {
+          "name": "product-shots-detail-page",
+          "path": "skills/product-visuals/product-shots-detail-page",
+          "summary_zh": "详情长图与 Amazon A+。"
+        },
+        {
+          "name": "product-shots-multi-angle",
+          "path": "skills/product-visuals/product-shots-multi-angle",
+          "summary_zh": "同一人物或产品的多角度一致性视觉。"
+        },
+        {
+          "name": "product-shots-ad-creative",
+          "path": "skills/product-visuals/product-shots-ad-creative",
+          "summary_zh": "多平台付费广告创意。"
+        },
+        {
+          "name": "product-shots-social-post",
+          "path": "skills/product-visuals/product-shots-social-post",
+          "summary_zh": "Feed、Story、Reel 封面和 Carousel 社媒视觉。"
+        },
+        {
+          "name": "product-shots-image-gen",
+          "path": "skills/product-visuals/product-shots-image-gen",
+          "summary_zh": "商品图生成、编辑和结果检查执行器。"
+        }
+      ]
+    }
+  ]
+}

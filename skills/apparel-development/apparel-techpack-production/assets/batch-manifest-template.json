@@ -1,0 +1,36 @@
+{
+  "title": "工艺单管理总表",
+  "items": [
+    {
+      "status": "待确认",
+      "effectImage": "images/STYLE-001.jpg",
+      "styleNo": "STYLE-001",
+      "productName": "",
+      "category": "",
+      "excelPath": "excel/STYLE-001_品牌工艺单.xlsx",
+      "pdfPath": "pdf/STYLE-001_品牌工艺单.pdf",
+      "sampleMode": "板房做样",
+      "sampleOwner": "",
+      "sampleStatus": "待排期",
+      "bulkProducer": "",
+      "bulkStatus": "待确认",
+      "version": "0.1",
+      "fabricCode": "",
+      "fabricName": "",
+      "fabricWidth": null,
+      "fabricConsumption": null,
+      "fabricUnitPrice": null,
+      "laborCost": null,
+      "trim": "",
+      "trimSize": "",
+      "trimConsumption": null,
+      "trimUnitPrice": null,
+      "packaging": "",
+      "packagingConsumption": null,
+      "careLabel": null,
+      "mainSizeLabel": null,
+      "domesticFreight": null,
+      "note": ""
+    }
+  ]
+}
