@@ -1,3 +1,5 @@
+> CWskills configuration update: use [configuration guide](references/configuration.md) and [input template](assets/input-template.json). Product facts and permissions never carry over automatically between projects. [SKILL.md](SKILL.md) is the current canonical workflow.
+
 <div align="center">
 
 # 🛒 E-commerce Visual Copywriting
@@ -6,10 +8,6 @@
 
 **Turn fragmented product inputs into an execution-ready e-commerce visual system for designers and AI image models.**
 
-[![Skill v3](https://img.shields.io/badge/Skill-v3.0-6f42c1)](SKILL.md)
-[![Agent Skills](https://img.shields.io/badge/Agent%20Skills-compatible-0969da)](SKILL.md)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Verify](https://img.shields.io/badge/verify-python%20tools%2Fverify--skill.py-2ea44f)](tools/verify-skill.py)
 
 [中文](README.md) · **English**
 

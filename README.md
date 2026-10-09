@@ -1,8 +1,8 @@
 # CWskills
 
-**可验证、可组合的电商 Agent Skills 开源资料库。**
+**可配置、可组合、可验证的电商 Agent Skills 工作系统。**
 
-CWskills 把服装开发、电商文案和商品视觉拆成可独立安装的小插件。每个 Skill 都说明什么时候用、需要什么输入、会交付什么，以及哪些信息不能凭空补造。
+CWskills 帮助用户减少重复整理、判断、检查和交付工作。通用 Skill 负责方法，用户可编辑的 Profile 负责品牌与工作习惯，项目资料负责真实产品事实。更换品牌、材料、女装或童装时修改配置与资料，不复制一整套 Skill。
 
 ## 为什么做这个库
 
@@ -85,6 +85,37 @@ cp -R skills/apparel-development/apparel-techpack-production ~/.codex/skills/
 ```text
 用 product-shots-main-image 为这个商品制作 Amazon US 白底主图与两张副图。
 ```
+
+## 个性化工作方式
+
+1. 保存同品牌可复用的 [品牌 Profile](skills/product-visuals/product-shots/assets/brand-profile-template.json)：Logo、色板、字体、语气和摄影偏好。
+2. 每个产品新建 [项目配置](skills/product-visuals/product-shots/assets/project-config-template.json)：市场、语言、人群、颜色、视角、材料、尺码、模块顺序与交付范围。具体字段见 [配置指南](skills/product-visuals/product-shots/references/configuration.md)。
+3. 只做策划时使用 [文案输入模板](skills/ecommerce-content/ecommerce-visual-copywriting/assets/input-template.json)；已有视觉配置可以直接引用。
+4. 局部返修沿用产品真源，更新受影响图片及其整页、预览和下载文件。用 [交付清单](skills/product-visuals/product-shots/assets/output-schema.json) 追踪当前产物。
+
+模板可由 Agent 根据用户资料填写。空值表示未知，不会从旧案例补造事实。私有 Profile、原图、报价、认证与尺码资料保存在用户项目，不提交进公共技能库。
+
+```text
+商品详情页图文制作：沿用我的品牌 Profile，按本次双色实拍和尺码资料制作完整电商详情页；材料页单独导出，并同步整页与模块。
+```
+
+## 能力边界与组合
+
+文案技能负责证据、文案和画面任务卡；视觉入口复用配置并路由，主图、详情页、多角度、广告与社媒各管自己的交付，生成执行器负责实际图片。服装开发仍负责工艺与生产数据，不被商品图流程替代。
+
+本次整合增强现有 8 个技能，技能总数仍为 9；没有另建重叠的套图或参考编辑技能。迁移取舍与公开内容范围见 [整合记录](docs/skill-integration.md)。
+
+## 发布前验证
+
+Python 3.9+；仓库检查需要 PyYAML，脚本语法检查需要 Node.js 与 bash。依赖见 [requirements-checks.txt](requirements-checks.txt)。仓库检查脚本不安装依赖、不联网、不读取凭据。
+
+```bash
+python3 scripts/validate_repository.py
+python3 -m unittest discover -s skills/product-visuals/product-shots/tests -v
+python3 skills/ecommerce-content/ecommerce-visual-copywriting/tools/verify-skill.py
+```
+
+检查覆盖 Skill 入口、YAML/JSON、相对链接、目录导航、脚本语法和常见泄密模式。品牌授权、事实有效性、实际图片质量与目标平台发布结果仍由实际资料和人工/Agent 查看验证；自动检查不会证明它们。
 
 ## 开源与来源
 

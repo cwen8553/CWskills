@@ -1,267 +1,55 @@
-<div align="center">
+# E-commerce Visual Copywriting
 
-# 🛒 E-commerce Visual Copywriting
+把商品资料转成可直接执行的视觉脚本、图内文案与设计师交接稿。
 
-### 电商视觉策划 · 主图 / 详情页 / Listing / A+ · 图内文案 · 生图 Prompt · 合规审查
+## 它解决什么问题
 
-**把零散商品资料，变成设计师和 AI 都能直接执行的电商视觉方案。**
+减少卖点重复、参数与用户利益脱节、不同页面文案冲突，以及图内功能和证据不匹配。先建立证据账本，再决定每张图回答哪个购买问题。
 
-[![Skill v3](https://img.shields.io/badge/Skill-v3.0-6f42c1)](SKILL.md)
-[![Agent Skills](https://img.shields.io/badge/Agent%20Skills-compatible-0969da)](SKILL.md)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Verify](https://img.shields.io/badge/verify-python%20tools%2Fverify--skill.py-2ea44f)](tools/verify-skill.py)
+## 什么时候使用
 
-**中文** · [English](README.en.md)
+准备主图/详情页/Listing/A+ 脚本、本地化已有文案、审查已有页面或交给设计师开工。需要实际图片时衔接 product-shots，图片生成与文案策划各自负责。
 
-[30 秒上手](#-30-秒上手) · [它解决什么](#-它解决什么) · [工作流](#-工作流) · [支持平台](#-支持平台) · [安全边界](#-安全边界)
+## 需要什么输入
 
-</div>
+真实产品资料、目标市场与人群、品牌偏好、可用图片和事实证据。材料、尺码、检测及认证需要对应本品资料。已有项目配置可以直接沿用，不再重复询问。
 
-> 不是“再写一段广告文案”。它先判断**为什么用户会买**，再锁定**视觉风格与产品真实性**，建立**证据账本**，最后输出逐图可执行的画面、图内文案、设计说明和生图 Prompt。
+## 会交付什么
 
----
+按任务提供 Storyboard、短文案、画面任务卡、设计说明、提示词及来源对应关系；审查模式只修改需要调整的部分。完整结构见 [输出模板](references/output-contracts.md)。多平台 Playbook 只作策划参考，当前审核规则另查官方资料。
 
-## ✨ 它解决什么
+## 用户可修改的配置
 
-普通 AI 做电商视觉，常见问题不是“不会写”，而是：
+复制 [输入模板](assets/input-template.json)，可修改市场、图内语言、人群、语气、模块顺序、工作模式和输出类型；品牌与视觉项目配置可直接引用。每个字段的必填状态、默认值、可选值和确认要求见 [配置说明](references/configuration.md)。
 
-| 常见问题 | 本 Skill 的处理方式 |
-|---|---|
-| 直接堆卖点，5 张图说同一件事 | 每张图只解决一个购买决策问题 |
-| 参数很多，但用户不知道和自己有什么关系 | `Feature → Advantage → Benefit → Evidence` |
-| 参考图越改越不像原产品 | `Reference Fidelity + Negative Constraints` 锁定包装、Logo、结构、规格 |
-| “写猛一点”后出现功效、绝对化、虚假证据风险 | 先建证据账本，再做宣称分级 |
-| 用户只想改现有详情页，却被从零重做 | 自动进入审查/改稿模式，做最小必要修改 |
-| 跨境页面只是中文直译 | 按市场、单位、场景、表达习惯做本地化重写 |
-| 平台规则已经变化，AI 仍引用旧经验 | 当前规则需要时优先核验官方最新来源 |
-| 输出只有文字，设计师还要二次猜 | 逐图交付画面 + 文案 + 设计说明 + Prompt + 禁止项 |
+品牌风格可以复用；产品成分、尺码、认证、价格与功效不能跨款沿用。模板不含客户名称或个人路径。
 
----
+## 安全边界
 
-## 🚀 30 秒上手
+不编造销量、评价、证书、价格、参数或功效。材料属性不自动等同于混纺成衣性能；不会用免责声明支撑无证据结论。内部来源与核验记录不默认铺进消费者页面，必要条件仍需保留。
 
-### 1. 安装
+不自动发布、投放、外传素材或读取凭据。仅交付脚本时不会声称图片已制作。
+
+## 调用示例
+
+```text
+用 ecommerce-visual-copywriting 根据这些产品资料，制作女装双色详情页脚本。中文沟通，图内用美式英文，材料介绍与产品性能分开核对。
+```
+
+```text
+按这个品牌配置，把现有详情页本地化成英文。只改文案和必要排版，不改变产品事实。
+```
+
+```text
+审查这页材料说明，删除没有证据的功能承诺，来源留在内部记录，保留消费者需要知道的使用条件。
+```
+
+## 安装与检查
 
 ```bash
 git clone https://github.com/cwen8553/CWskills.git
-cp -R CWskills/skills/ecommerce-content/ecommerce-visual-copywriting ~/.codex/skills/
 ```
 
-### 2. 直接说需求
+把本技能目录放入宿主的 Skills 目录；若需实际出图，同时安装商品视觉分类。运行 `python3 tools/verify-skill.py` 检查本技能结构；仓库完整检查见根目录说明。
 
-```text
-这是我的产品资料、包装图和竞品参考。
-面向 Amazon US，直接给我 7 张商品图 + A+ 视觉规划：
-每张包含画面、英文图内文案、设计说明、生图 Prompt 和 Negative Prompt。
-不要中途确认，缺失信息请标注假设，不要编造。
-```
-
-也可以更简单：
-
-```text
-帮我把这个商品做成一套能直接交给设计师的主图和详情页方案。
-```
-
----
-
-## 🧭 工作流
-
-```mermaid
-flowchart LR
-    A[商品资料 / 包装 / 资质 / 参考图] --> B[任务路由]
-    B --> C[证据账本]
-    C --> D[成交驱动力]
-    D --> E[Campaign Style Lock]
-    E --> F[Storyboard]
-    F --> G[逐图执行稿]
-    G --> H[五维质量门]
-    H --> I[设计师 / 生图模型可直接执行]
-```
-
-### 四种执行模式
-
-| 模式 | 什么时候用 | 行为 |
-|---|---|---|
-| **标准模式** | 方向不清、成本高、用户要求先确认 | 先策略 → Storyboard → 确认后执行 |
-| **一次性交付** | 用户明确“直接做完”或资料充分 | 不机械暂停，完整交付 |
-| **审查 / 改稿** | 已有主图、详情页、文案、Prompt | 找问题 + 最小必要修改 |
-| **设计师交接** | 需要直接开工的执行稿 | 使用固定结构输出逐图任务卡 |
-
-### 新版 v3 核心能力
-
-- **Evidence Ledger / 证据账本**：每条关键卖点标记“已确认 / 有依据 / 待补证 / 禁止”。
-- **Reference Fidelity**：明确哪些元素必须保持、哪些可以变化。
-- **Negative Prompt**：把包装变形、Logo 错误、规格变化、文字乱码、人物异常等提前写进禁止项。
-- **动态图片数量**：5 张只是默认，不再为了凑数硬做 5 张。
-- **多平台 Playbook**：国内电商 + Amazon / Shopify / TikTok Shop / Temu / Shopee / Lazada。
-- **跨境本地化**：不是直译，重写购买理由、单位、场景和信息密度。
-- **硬性阻断 + Pass/Fail 质量门**：替代无锚点的“80/100”伪精确评分。
-
----
-
-## 📦 能交付什么
-
-### 视觉策略
-
-- 成交驱动力：视觉 / 痛点 / 参数 / 信任 / 情绪
-- Top 3 购买理由
-- 证据账本
-- `Feature → Advantage → Benefit → Evidence`
-- Campaign Style Lock
-- 缺失信息、假设与风险
-
-### Storyboard
-
-```text
-KV1  Hero      → 一眼知道卖什么 + 为什么点进来
-KV2  Benefit   → 把核心参数翻译成用户收益
-KV3  Proof     → 用真实证据建立信任
-KV4  Scene     → 让目标用户看到自己的使用场景
-KV5  Spec/CTA  → 规格、组合、选择或行动信息
-```
-
-> 实际数量按平台和商品调整，不固定 5 张。
-
-### 单张执行卡
-
-每张图可直接交付：
-
-- 视觉任务
-- 画面 / 构图 / 镜头 / 光影 / 背景
-- 图内文案
-- 第一视觉落点
-- 设计说明
-- 生图 Prompt
-- Negative Prompt / 禁止项
-- 证据来源
-- 合规 / 平台备注
-
----
-
-## 🌍 支持平台
-
-| 国内 | 跨境 / DTC |
-|---|---|
-| 淘宝 / 天猫 | Amazon Listing / A+ / Brand Story |
-| 京东 | Shopify / DTC PDP |
-| 拼多多 | TikTok Shop |
-| 抖音小店 | Temu |
-| 其他商品详情页场景 | Shopee / Lazada |
-
-平台相关内容分成两类处理：
-
-1. **长期稳定的视觉策略**：使用 `references/platform-playbooks.md`。
-2. **当前尺寸、主图限制、禁词、资质、审核规则**：需要时优先核验平台官方最新来源，不把旧经验写成现行规则。
-
----
-
-## 🧪 典型用法
-
-### 先策划再执行
-
-```text
-帮我做一套淘宝主图和详情页。
-先判断成交驱动力、风格锁和分镜，我确认后再做最终稿。
-```
-
-### 一次性完整交付
-
-```text
-资料已经齐了，直接一次性做完，不用中途确认。
-输出主图、详情页、图内文案、设计说明和生图 Prompt。
-```
-
-### 审查已有页面
-
-```text
-不要重做。帮我检查这套详情页哪里影响转化、哪里有合规风险，
-按优先级给最小修改方案和修正版。
-```
-
-### 参考图保真
-
-```text
-参考这张包装图做主图。
-Logo、包装颜色、规格、罐型不能变，场景和光影可以变化。
-```
-
-### 跨境本地化
-
-```text
-把这套中文详情页改成 Shopify US 英文版。
-不要直译，要按美国用户的购买逻辑重写。
-```
-
-更多示例见 [examples/README.md](examples/README.md)。
-
----
-
-## 🛡 安全边界
-
-这个 Skill **不会**：
-
-- 编造检测报告、认证、专利、批准文号、销量、评价、排名或用户证言。
-- 把“待补证”的内容写成确定事实。
-- 因为用户要求“更猛”就突破医疗、食品、健康或平台合规边界。
-- 用一句免责声明去“洗白”本身不允许的功效宣称。
-- 把历史平台经验当成当前平台硬规则。
-- 为了视觉效果擅自改错产品包装、Logo、规格或结构。
-
-合规框架见 [references/compliance-rules.md](references/compliance-rules.md)。
-
----
-
-## 🗂 仓库结构
-
-```text
-SKILL.md                          # Canonical runtime entrypoint
-SKILL.en.md                       # English companion
-agents/openai.yaml                # ChatGPT UI metadata
-references/compliance-rules.md    # 证据与合规框架
-references/platform-playbooks.md  # 多平台视觉策略
-references/output-contracts.md    # 设计师交付 / 审查 / 本地化模板
-examples/README.md                # 典型输入与期望行为
-tools/verify-skill.py             # 发布前结构与隐私检查
-```
-
----
-
-## ✅ 验证
-
-```bash
-python tools/verify-skill.py
-```
-
-发布前建议同时使用 Skill 官方 validator / packager 检查 `SKILL.md` frontmatter 和包结构。
-
----
-
-## 手动安装
-
-macOS / Linux：
-
-```bash
-git clone https://github.com/cwen8553/CWskills.git
-cp -R CWskills/skills/ecommerce-content/ecommerce-visual-copywriting ~/.codex/skills/
-```
-
-Windows PowerShell：
-
-```powershell
-git clone https://github.com/cwen8553/CWskills.git
-Copy-Item -Recurse CWskills\skills\ecommerce-content\ecommerce-visual-copywriting "$env:USERPROFILE\.codex\skills\"
-```
-
-不同 Agent runtime 的 Skill 目录可能不同，以对应运行环境文档为准。
-
----
-
-## License
-
-[MIT](LICENSE)
-
-<div align="center">
-
-**先把“为什么买”讲清楚，再把每一张图做对。**
-
-</div>
+流程入口：[SKILL.md](SKILL.md)。[English overview](README.en.md)。来源与许可：[MIT](LICENSE)，Copyright (c) 2026 OpenClaw Community；CWskills 提供配置与工作流衔接修改。

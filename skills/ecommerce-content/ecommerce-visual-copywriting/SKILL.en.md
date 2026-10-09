@@ -1,3 +1,5 @@
+> CWskills configuration update: use [configuration guide](references/configuration.md) and [input template](assets/input-template.json). Product facts and permissions never carry over automatically between projects. [SKILL.md](SKILL.md) is the current canonical workflow.
+
 # E-commerce Visual Planning and Execution
 
 > Human-readable English mirror. `SKILL.md` is the canonical runtime entrypoint. When the user requests English or bilingual output, preserve the same evidence, compliance, and workflow rules.

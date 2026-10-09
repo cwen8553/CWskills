@@ -1,7 +1,7 @@
 {
   "name": "CWskills",
-  "description": "Open-source e-commerce Agent Skills organized by business use case.",
-  "version": "0.1.0",
+  "description": "A configurable Agent Skills system for repeatable apparel, content and product-visual workflows.",
+  "version": "0.2.0",
   "categories": [
     {
       "id": "apparel-development",
@@ -21,7 +21,10 @@
         {
           "name": "ecommerce-visual-copywriting",
           "path": "skills/ecommerce-content/ecommerce-visual-copywriting",
-          "summary_zh": "电商视觉策略、Storyboard、图内文案、Prompt 与合规证据检查。"
+          "summary_zh": "电商视觉策略、Storyboard、图内文案、Prompt 与合规证据检查。",
+          "configuration": [
+            "skills/ecommerce-content/ecommerce-visual-copywriting/assets/input-template.json"
+          ]
         }
       ]
     },
@@ -33,37 +36,102 @@
         {
           "name": "product-shots",
           "path": "skills/product-visuals/product-shots",
-          "summary_zh": "商品图任务路由入口。"
+          "summary_zh": "商品图任务路由入口。",
+          "version": "4.0.0",
+          "configuration": [
+            "skills/product-visuals/product-shots/assets/brand-profile-template.json",
+            "skills/product-visuals/product-shots/assets/project-config-template.json"
+          ],
+          "dependencies": []
         },
         {
           "name": "product-shots-main-image",
           "path": "skills/product-visuals/product-shots-main-image",
-          "summary_zh": "Amazon US 主图与副图。"
+          "summary_zh": "Amazon US 主图与副图。",
+          "version": "4.0.0",
+          "configuration": [
+            "skills/product-visuals/product-shots/assets/brand-profile-template.json",
+            "skills/product-visuals/product-shots/assets/project-config-template.json"
+          ],
+          "dependencies": [
+            "product-shots",
+            "product-shots-image-gen"
+          ]
         },
         {
           "name": "product-shots-detail-page",
           "path": "skills/product-visuals/product-shots-detail-page",
-          "summary_zh": "详情长图与 Amazon A+。"
+          "summary_zh": "按品牌与项目配置制作连贯详情页、多颜色模块、材料页和有依据的尺码页。",
+          "version": "4.0.0",
+          "configuration": [
+            "skills/product-visuals/product-shots/assets/brand-profile-template.json",
+            "skills/product-visuals/product-shots/assets/project-config-template.json"
+          ],
+          "dependencies": [
+            "product-shots",
+            "product-shots-image-gen"
+          ],
+          "triggers_zh": [
+            "商品详情页图文制作",
+            "电商详情页",
+            "详情长图",
+            "A+"
+          ]
         },
         {
           "name": "product-shots-multi-angle",
           "path": "skills/product-visuals/product-shots-multi-angle",
-          "summary_zh": "同一人物或产品的多角度一致性视觉。"
+          "summary_zh": "依据对应角度的真源制作多颜色三视图或同一模特系列，按需确定张数。",
+          "version": "4.0.0",
+          "configuration": [
+            "skills/product-visuals/product-shots/assets/brand-profile-template.json",
+            "skills/product-visuals/product-shots/assets/project-config-template.json"
+          ],
+          "dependencies": [
+            "product-shots",
+            "product-shots-image-gen"
+          ]
         },
         {
           "name": "product-shots-ad-creative",
           "path": "skills/product-visuals/product-shots-ad-creative",
-          "summary_zh": "多平台付费广告创意。"
+          "summary_zh": "多平台付费广告创意。",
+          "version": "4.0.0",
+          "configuration": [
+            "skills/product-visuals/product-shots/assets/brand-profile-template.json",
+            "skills/product-visuals/product-shots/assets/project-config-template.json"
+          ],
+          "dependencies": [
+            "product-shots",
+            "product-shots-image-gen"
+          ]
         },
         {
           "name": "product-shots-social-post",
           "path": "skills/product-visuals/product-shots-social-post",
-          "summary_zh": "Feed、Story、Reel 封面和 Carousel 社媒视觉。"
+          "summary_zh": "Feed、Story、Reel 封面和 Carousel 社媒视觉。",
+          "version": "4.0.0",
+          "configuration": [
+            "skills/product-visuals/product-shots/assets/brand-profile-template.json",
+            "skills/product-visuals/product-shots/assets/project-config-template.json"
+          ],
+          "dependencies": [
+            "product-shots",
+            "product-shots-image-gen"
+          ]
         },
         {
           "name": "product-shots-image-gen",
           "path": "skills/product-visuals/product-shots-image-gen",
-          "summary_zh": "商品图生成、编辑和结果检查执行器。"
+          "summary_zh": "商品图生成、编辑和结果检查执行器。",
+          "version": "4.0.0",
+          "configuration": [
+            "skills/product-visuals/product-shots/assets/brand-profile-template.json",
+            "skills/product-visuals/product-shots/assets/project-config-template.json"
+          ],
+          "dependencies": [
+            "product-shots"
+          ]
         }
       ]
     }

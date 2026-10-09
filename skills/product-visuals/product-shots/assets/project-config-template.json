@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "project_id": null,
+  "brand_profile": "config/brand-profile.json",
+  "product": {
+    "category": null,
+    "audience": null,
+    "reference_ids": [],
+    "locked_features": [],
+    "colors": []
+  },
+  "references": [],
+  "claims": [],
+  "market": null,
+  "copy_language": null,
+  "deliverables": [
+    "detail_page",
+    "modules",
+    "editable_source",
+    "preview"
+  ],
+  "module_order": [
+    "hero",
+    "details",
+    "views",
+    "lifestyle",
+    "colors",
+    "material",
+    "sizing"
+  ],
+  "views": [],
+  "platform_requirement": {
+    "placement": null,
+    "width_px": null,
+    "height_px": null,
+    "source": null,
+    "checked_on": null,
+    "status": "unverified"
+  },
+  "model": {
+    "identity_reference_id": null,
+    "age_group": null,
+    "height_target_cm": null,
+    "action": null
+  },
+  "material": {
+    "enabled": false,
+    "partner_name": null,
+    "composition": [],
+    "claim_ids": [],
+    "included_tag_reference_ids": [],
+    "standalone": false
+  },
+  "sizing": {
+    "mode": "measurement_guide",
+    "labels": [],
+    "measurement": null,
+    "unit": null,
+    "source_ids": [],
+    "confirmed": false,
+    "rows": []
+  },
+  "workflow": {
+    "mode": "direct",
+    "generation": "host_builtin",
+    "revision_scope": "affected",
+    "publish": false
+  }
+}

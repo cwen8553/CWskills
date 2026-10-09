@@ -1,24 +1,43 @@
 ---
 name: product-shots-detail-page
-description: 依据真实商品、已认可款式及详情页参考，设计连贯的 Amazon A+ 与服装商品详情视觉；制作整页预览及可拆分模块，适用于详情长图、模特拼贴、材料细节、颜色与尺码编排。白底主图另走主图技能。
+description: 把真实商品参考、品牌配置和已证实卖点制作成连贯的电商详情页、Amazon A+ 及可拆分模块；响应“商品详情页图文制作”“电商详情页”“详情长图”，支持多颜色、材料页与尺码页，白底主图另行路由。
 license: MIT
 metadata:
   author: motiful
-  source: product-shots ecosystem
-  skill_id: product_shots_detail_page
-  version: '2.0'
+  source: https://github.com/motiful/product-shots
+  version: '4.0.0'
 ---
 
-# 商品详情与 A+ 整页视觉
+# 商品详情页图文制作
 
-涉及尺码页、真实人物测量示意或清理尺寸图脚注时，读 [尺码页设计与简洁成品](../product-shots/references/apparel-size-layout.md)。
+把产品事实组织为连贯、可编辑、可拆分的商品详情视觉，减少单图拼凑与重复返工。
 
-读 [生产质量标准](../product-shots/references/production-quality.md)、[连贯商品详情排版](../product-shots/references/editorial-product-story.md) 和 [模特、场景与材料边界](../product-shots/references/model-scene-material.md)。
+## 适用场景
 
-1. 明确用户是要连贯整页、指定模块还是仅技能优化；按已授权范围完成，不把计划说成已出图。
-2. 从获认可的款式和原始实拍建立产品锁定，不强制先生成新主图、不要求上传本地参考换取URL。
-3. 分析参考页的节奏：主视觉、特写、拼贴、自然动作、材料、配色、尺码。先内部建立整页布局，再制作需要的素材；模块数由购买问题与证据决定。
-4. 生成照片默认内置image_gen，准确Logo/标签/文字用原件及可编辑排版。精确产品结构必须保留，人物比例错误不得靠拉伸整图解决。
-5. 完成整页视觉检查及模块拆分，交付连贯长图+模块图+源文件；需要时另附纯白主图。已知错误素材淘汰，不能把下载相册或报告当作详情页。
+商品详情长页、A+、材料独立宣传页、现有模块替换；适用于成人服装、童装及其他有真实资料的商品。
 
-实际上传前读 `references/aplus-specifications.md`，按所用卖家模块核对规格；不承诺一张概念长图即可直接上传。统一性检查见 `references/consistency-rules.md`。旧 `aplus-modules.md` 仅供主题灵感，不采用其中固定数量、比例或未经核验的平台断言。
+## 核心工作流程
+
+1. 先读 [整页设计](../product-shots/references/editorial-product-story.md) 与 [产品质量](../product-shots/references/production-quality.md)。锁定本品结构、配色与证据。
+2. 先设计整页缩略构图和信息节奏，再制作素材。每模块回答一个购买问题，不强行凑页数。
+3. 按需读取 [人物与场景](../product-shots/references/model-scene-material.md)、[提示词组件](../product-shots/references/prompt-components.md)、[材料叙事](../product-shots/references/material-evidence.md)、[尺码逻辑](../product-shots/references/apparel-size-layout.md)。没有该模块不加载对应规则。
+4. 两色或多色按 colors 与 views 配置展开；三视图由多角度技能执行，保留产品正侧背结构与穿着者方向。
+5. 照片生成交给 [生成执行器](../product-shots-image-gen/SKILL.md)；精确 Logo、图内文字与尺码表优先用授权原件及可编辑排版。
+6. 材料页可独立导出；它与尺码页的先后取 module_order，不将某客户偏好固化成全局规则。
+7. 检查整页、模块和手机阅读效果，按 [一致性](references/consistency-rules.md) 返修。A+ 导出前读 [规格处理](references/aplus-specifications.md)。
+
+## 配置与输入
+
+读取用户已提供的真实产品图、产品资料和本次输出范围。沿用已确认信息，不重复问答。
+使用 [共享品牌模板](../product-shots/assets/brand-profile-template.json) 与 [项目模板](../product-shots/assets/project-config-template.json)，字段说明见 [配置指南](../product-shots/references/configuration.md)。模板可不预先填写，由 Agent 从已有资料整理；未知事实保留 null。
+
+## 事实、权限和失败边界
+
+原始资料决定产品事实；风格参考只决定摄影与排版。不得编造尺寸、成分、认证、价格、评价或功效。材料证据不得跨产品沿用。当前平台数值与政策在任务时核验，并记录官方来源、适用版位和核验日期。
+按用户已授权范围制作，不自动上传、发布、投放或改动其他项目。只用宿主允许的能力；生成失败说明实际状态，不自动读取凭据或切换外部付费接口。
+候选图有款式或人物错误时修正对应产物；不能以提示词、任务编号或文件存在代替看图验收。
+
+## 输出要求
+
+交付本任务对应的实际产物和可编辑文案/排版源，记录真实像素、来源绑定与检查结果。仅策划任务交付执行卡，不声称已生成图片。
+按 [交付与局部修改](../product-shots/references/delivery-protocol.md) 更新相关导出，内部证据记录与消费者页面分开保存。
